@@ -1,8 +1,10 @@
-<h1>Stackbird</h1>
-
-<p>Welcome to Stackbird. Care to browse a timeline? Submit a twitter handle below!</p>
-
-<form action="/timeline_redirect" method="GET">
-  <input type="text" name="username" />
-  <button type="submit">Submit</button>
-</form>
+<div class="jumbotron">
+  <h1>Welcome to Stackbird.</h1>
+  <p>Care to browse a timeline? Submit a twitter handle below!</p>
+  <form action="/timeline_redirect" method="GET" class="form-inline">
+    <div class="form-group">
+      <input type="text" name="username" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary btn-md">Submit</button>
+  </form>
+</div>
