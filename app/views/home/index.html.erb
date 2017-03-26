@@ -2,7 +2,7 @@
 
 <p>Welcome to Stackbird. Care to browse a timeline? Submit a twitter handle below!</p>
 
-<form>
-  <input type="text" name="handle" />
-  <submit type="submit" name="Browse">
+<form action="/timeline_redirect" method="GET">
+  <input type="text" name="username" />
+  <button type="submit">Submit</button>
 </form>

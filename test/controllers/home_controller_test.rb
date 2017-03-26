@@ -6,4 +6,9 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "#timeline_redirect should redirect to timeline" do
+    get '/timeline_redirect?username=support'
+    assert_response :redirect
+  end
+
 end
