@@ -13,4 +13,10 @@ class TwitterTest < ActiveSupport::TestCase
     assert tweets.count == 25
   end
 
+  test "it returns a Twitter::Tweet object" do
+    t = Twitter.new
+    tweets = t.timeline('support')
+    assert tweets.first.class == Twitter::Tweet
+  end
+
 end

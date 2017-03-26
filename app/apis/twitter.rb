@@ -8,7 +8,8 @@ class Twitter
 
   def timeline(username)
     options = { count: 25, screen_name: username, tweet_mode: :extended }
-    api_request('/1.1/statuses/user_timeline.json', options)
+    raw_data = api_request('/1.1/statuses/user_timeline.json', options)
+    raw_data.collect{|datum| Twitter::Tweet.new(datum) }
   end
 
   def api_request(path, options={})
