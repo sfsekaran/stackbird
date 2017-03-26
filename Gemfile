@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 # clearence for user auth
 gem 'clearance'
+# for http requests
+gem 'http'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
