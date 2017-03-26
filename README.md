@@ -14,6 +14,15 @@
 * To run a local server: `rails server`. Of course, you know this already :)
 * How to run the test suite: run `rake test`
 
+## Production
+
+Find the production app here: https://stackbird.herokuapp.com/
+
+Use the following credentials on production to login:
+
+* username: test@stackcommerce.com
+* password: test
+
 ## Architecture
 
 * I realized that I would be spending way too much time creating the authorization/authentication software, so I used Thoughtbot's great Clearance gem to get the job done.
