@@ -1,9 +1,18 @@
-<h1><%= @handle %>'s Timeline</h1>
+<div class="page-header">
+  <h1><%= @handle %>'s Timeline</h1>
+</div>
 
-<ul class="list-group">
+<ul class="list-group col-md-8 col-md-offset-2">
   <% @tweets.each do |tweet| %>
     <li class="list-group-item">
-      <%= tweet['retweeted_status'] && tweet['retweeted_status']['full_text'] || tweet['full_text'] %>
+      <div class="row">
+        <div class="col-md-10">
+          <%= tweet['retweeted_status'] && tweet['retweeted_status']['full_text'] || tweet['full_text'] %>
+        </div>
+        <div class="col-md-2">
+          <span class="badge pull-right"><%= DateTime.parse(tweet['created_at']).strftime('%b %e, %l:%M %p') %></span>
+        </div>
+      </div>
     </li>
   <% end %>
 </ul>
