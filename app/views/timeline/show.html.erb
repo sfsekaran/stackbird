@@ -1,7 +1,7 @@
 <h1><%= @handle %>'s Timeline</h1>
 
 <ul>
-  <%# @tweets.each do |tweet| %>
-    <li>TEST TWEET TEXT<%#= tweet.text %></li>
-  <%# end %>
+  <% @tweets.each do |tweet| %>
+    <li><%= tweet['retweeted_status'] && tweet['retweeted_status']['full_text'] || tweet['full_text'] %></li>
+  <% end %>
 </ul>

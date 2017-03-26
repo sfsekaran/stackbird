@@ -7,7 +7,7 @@ class Twitter
   CONSUMER_SECRET = "FQnxzMPSWKkrVCu7tXAgjNA3ZCC80F3HEZezzkG5NxGGROEet0".freeze
 
   def timeline(username)
-    options = { count: 25, screen_name: username }
+    options = { count: 25, screen_name: username, tweet_mode: :extended }
     api_request('/1.1/statuses/user_timeline.json', options)
   end
 
