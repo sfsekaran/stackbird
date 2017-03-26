@@ -5,5 +5,6 @@ class TimelineController < ApplicationController
     @handle = params[:id]
     t = Twitter.new
     @tweets = t.timeline(@handle)
+    @tweets = TweetDecorator.collection(@tweets)
   end
 end
