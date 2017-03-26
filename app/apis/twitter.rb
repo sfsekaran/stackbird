@@ -13,9 +13,11 @@ class Twitter
   end
 
   def api_request(path, options={})
-    headers = { 'Authorization' => "Bearer #{bearer_token}" }
-    response = HTTP.headers(headers).get("#{BASE_URL}#{path}", params: options)
-    response.parse
+    Rails.cache.fetch("twitter-api:#{path}:#{options.to_json}", expires_in: 5.minutes) do
+      headers = { 'Authorization' => "Bearer #{bearer_token}" }
+      response = HTTP.headers(headers).get("#{BASE_URL}#{path}", params: options)
+      response.parse
+    end
   end
 
   def bearer_token
