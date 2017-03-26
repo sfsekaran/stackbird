@@ -9,7 +9,10 @@ class TweetDecorator
   end
 
   def text
-    @tweet.text.gsub(/@([\w_]+)/, '<a href="/timeline/\1">@\1</a>')
+    text = @tweet.text
+    text = text.gsub(/@([\w_]+)/, '<a href="/timeline/\1">@\1</a>')
+    text = text.gsub(/\n/, '<br />')
+    text
   end
 
   def created_at
