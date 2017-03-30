@@ -12,6 +12,7 @@ class TweetDecorator
     text = @tweet.text
     text = text.gsub(/@([\w_]+)/, '<a href="/timeline/\1">@\1</a>')
     text = text.gsub(/\n/, '<br />')
+    text = text.gsub(/(https?:\/\/[^ ]*)/, '<a href="\1">\1</a>')
     text
   end
 

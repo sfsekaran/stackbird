@@ -31,4 +31,11 @@ class TweetDecoratorTest < ActiveSupport::TestCase
     assert_equal 'Mar 22,  9:22 PM', decorator.created_at
   end
 
+  test "urls get turned into links" do
+    tweet = Twitter::Tweet.new({'full_text' => 'Please go to https://www.google.com/ for more info!'})
+    decorator = TweetDecorator.new(tweet)
+    expected = 'Please go to <a href="https://www.google.com/">https://www.google.com/</a> for more info!'
+    assert_equal expected, decorator.text
+  end
+
 end
